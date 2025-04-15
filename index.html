@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Kartı</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Yıldızlar -->
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-image-container">
+                <img src="default-avatar.png" alt="Profil Resmi" class="profile-image" id="profileImage">
+                <div class="profile-image-overlay">
+                    <label for="imageUpload" class="upload-button">
+                        <i class="fas fa-camera"></i>
+                    </label>
+                    <input type="file" id="imageUpload" accept="image/*,video/*" style="display: none;">
+                </div>
+            </div>
+            <h2 class="profile-name">Kullanıcı Adı</h2>
+            <p class="profile-title">Yazılım Geliştirici</p>
+            <p class="profile-bio">Merhaba! Ben bir yazılım geliştiricisiyim.</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+            <a href="#" class="social-link"><i class="fas fa-gamepad"></i></a>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-value">0</span>
+                <span class="stat-label">Görüntülenme</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">0</span>
+                <span class="stat-label">Beğeni</span>
+            </div>
+            <div class="stat">
+                <span class="stat-value">0</span>
+                <span class="stat-label">Takipçi</span>
+            </div>
+        </div>
+        
+        <div class="action-buttons">
+            <button class="action-button like-button">Beğen</button>
+            <button class="action-button follow-button">Takip Et</button>
+            <button class="action-button share-button">Paylaş</button>
+        </div>
+    </div>
+    
+    <!-- Paylaşım Modal -->
+    <div id="shareModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Profili Paylaş</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="share-options">
+                <button class="share-button twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+                <button class="share-button whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+                <button class="share-button telegram">
+                    <i class="fab fa-telegram"></i> Telegram
+                </button>
+                <div class="copy-link">
+                    <input type="text" id="profileLink" readonly>
+                    <button class="copy-button">Kopyala</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Profil Düzenleme Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Profili Düzenle</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <form id="editForm">
+                <div class="form-group">
+                    <label for="name">İsim</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Ünvan</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="bio">Hakkımda</label>
+                    <textarea id="bio" name="bio" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Kaydet</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Sosyal Medya Modal -->
+    <div id="socialModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sosyal Medya</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <form id="socialForm">
+                <div class="form-group">
+                    <label for="tiktok">TikTok</label>
+                    <input type="url" id="tiktok" name="tiktok">
+                </div>
+                <div class="form-group">
+                    <label for="youtube">YouTube</label>
+                    <input type="url" id="youtube" name="youtube">
+                </div>
+                <div class="form-group">
+                    <label for="instagram">Instagram</label>
+                    <input type="url" id="instagram" name="instagram">
+                </div>
+                <div class="form-group">
+                    <label for="discord">Discord Sunucusu</label>
+                    <input type="url" id="discord" name="discord">
+                </div>
+                <div class="form-group">
+                    <label for="kick">Kick</label>
+                    <input type="url" id="kick" name="kick">
+                </div>
+                <button type="submit" class="submit-button">Kaydet</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Tema Seçme Modal -->
+    <div id="themeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Tema Seç</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="theme-options">
+                <div class="theme-option" data-theme="mor">
+                    <div class="theme-preview mor-theme"></div>
+                    <span class="theme-name">Mor Tema</span>
+                </div>
+                <div class="theme-option" data-theme="pembe">
+                    <div class="theme-preview pembe-theme"></div>
+                    <span class="theme-name">Pembe Tema</span>
+                </div>
+                <div class="theme-option" data-theme="galaksi">
+                    <div class="theme-preview galaksi-theme"></div>
+                    <span class="theme-name">Galaksi Tema</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
